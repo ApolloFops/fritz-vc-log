@@ -3,11 +3,13 @@ from discord.channel import TextChannel
 from discord.ext import commands
 from discord.commands import SlashCommandGroup
 
-from resources.shared import CONTEXTS, INTEGRATION_TYPES
 from scripts.tools import journal
 
 from .config import LOG_COMPONENT
 from .database import VCLogDatabase
+
+CONTEXTS = {discord.InteractionContextType.guild, discord.InteractionContextType.private_channel}
+INTEGRATION_TYPES = {discord.IntegrationType.guild_install}
 
 database = VCLogDatabase()
 
